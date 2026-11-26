@@ -2,6 +2,7 @@
 
 import { Plus, User, Wallet } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import "../app/navbar.css";
 import Image from "next/image";
 
@@ -16,13 +17,19 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <nav className="navbar">
       <div className="navbar-inner">
         {/* Logo */}
         <Link href="/" className="navbar-logo">
           <div className="logo-icon">
-            <Image src="/images/logo.svg" alt="AstroMul" width={32} height={32} />
+            <Image
+              src="/images/logo.svg"
+              alt="AstroMul"
+              width={32}
+              height={32}
+            />
           </div>
           <p className="logo-text flex items-center">
             Astro <span className="logo-accent">Mul</span>
@@ -35,7 +42,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`nav-link ${link.active ? "is-active" : ""}`}
+              className={`nav-link ${pathname === link.href ? "is-active" : ""}`}
             >
               {link.name}
             </Link>

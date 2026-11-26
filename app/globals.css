@@ -9,9 +9,6 @@
   --paper: #fbf8fc;
   --line: #f0ebf0;
   --green: #0ba77a;
-}
-
-@theme inline {
   --color-background: var(--paper);
   --color-foreground: var(--ink);
   --font-sans: var(--font-inter);
@@ -2022,12 +2019,10 @@ button {
   .navbar-links {
     display: none;
   }
-
 }
 
 @media (max-width: 760px) {
   .navbar-inner {
     padding: 12px 24px;
   }
-
 }

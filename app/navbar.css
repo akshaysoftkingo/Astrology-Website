@@ -1,0 +1,176 @@
+.navbar {
+  --amber: #f2ae1e;
+  --amber-dark: #7a5200;
+  --ink: #5b4630;
+  --pill-bg: #f6f2f8;
+  --pill-border: #e9e2ee;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+.navbar-inner {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
+  font-size: 20px;
+  color: #2a2118;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-right: 0;
+}
+
+.logo-accent {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--amber);
+}
+
+/* Nav pill */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: #f6f2f7;
+  border-radius: 999px;
+  color: #504534;
+  font-family: var(--font-inter);
+}
+
+.nav-link {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.nav-link:hover {
+  background: rgba(242, 174, 30, 0.15);
+}
+
+.nav-link.is-active {
+  background: var(--amber);
+  color: #2a1c00;
+}
+
+/* Right side */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 5px 5px 12px;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  border-radius: 999px;
+}
+
+.wallet-icon {
+  color: var(--amber-dark);
+}
+
+.wallet-amount {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2a2118;
+}
+
+.wallet-add {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #2a1c00;
+  transition: transform 0.15s;
+}
+
+.wallet-add:hover {
+  transform: scale(1.08);
+}
+
+.btn-login {
+  padding: 10px 22px;
+  border: 1px solid #c9b79a;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b1b1e;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.btn-login:hover {
+  background: #fff8e8;
+  border-color: var(--amber);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--amber-dark);
+  color: #fff;
+}
+
+/* Keyboard focus */
+.navbar a:focus-visible {
+  outline: 2px solid var(--amber-dark);
+  outline-offset: 2px;
+}
+
+/* Smaller screens: let the pill scroll sideways */
+@media (max-width: 1100px) {
+  .navbar-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 50vw;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links,
+  .btn-login {
+    display: none;
+  }
+}

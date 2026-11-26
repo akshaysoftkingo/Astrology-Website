@@ -95,53 +95,70 @@ export const astrologers = [
 
 export const directoryAstrologers = [
   {
+    slug: "pt-radheshyam",
     name: "Pt. Radheshyam",
     image: "/images/astrologer-1.svg",
-    specialty: "Vedic • KP Astrology",
-    languages: "English, Hindi",
-    experience: 16,
+    specialty: "Vedic Astrology, Kundli Matching , Career & Wealth",
+    languages: "Hindi, English, Sanskrit",
+    experience: "16+",
     rating: 4.9,
     reviews: "4,210",
     rate: 35,
     online: true,
   },
   {
+    slug: "acharya-meenakshi",
     name: "Acharya Meenakshi",
     image: "/images/astrologer-2.svg",
-    specialty: "Tarot • Relationship",
+    specialty: "Tarot, Relationship",
     languages: "English, Tamil",
     experience: 12,
     rating: 4.8,
     reviews: "3,150",
     rate: 40,
     online: true,
+    similarRating: 4.95,
+    similarReviews: "3,890",
+    similarSpecialty: "Tarot & Vedic",
   },
   {
+    slug: "dr-arvind-shastri",
     name: "Dr. Arvind Shastri",
     image: "/images/astrologer-3.svg",
-    specialty: "Career • Wealth Vedic",
+    specialty: "Career, Wealth Vedic",
     languages: "Hindi, Sanskrit",
     experience: 20,
     rating: 5.0,
     reviews: "6,890",
     rate: 55,
     online: true,
+    similarRating: 4.88,
+    similarReviews: "6,150",
+    similarRate: 50,
+    similarExperience: 22,
+    similarSpecialty: "Career & Wealth",
   },
   {
+    slug: "shrimati-sunita-devi",
     name: "Shrimati Sunita Devi",
     image: "/images/astrologer-4.svg",
-    specialty: "Numerology • Kundli",
+    specialty: "Numerology, Kundli Matching",
     languages: "English, Bengali",
     experience: 14,
     rating: 4.7,
     reviews: "2,100",
     rate: 30,
     online: false,
+    similarRating: 4.92,
+    similarReviews: "2,940",
+    similarSpecialty: "Numerology",
+    similarExperience: 15,
   },
   {
+    slug: "guru-ramanathan",
     name: "Guru Ramanathan",
     image: "/images/astrologer-5.svg",
-    specialty: "Vedic • Prashna",
+    specialty: "Vedic Astrology, Prashna",
     languages: "Tamil, Telugu",
     experience: 18,
     rating: 4.9,
@@ -150,9 +167,26 @@ export const directoryAstrologers = [
     online: true,
   },
   {
+    slug: "yogacharya-rahul",
+    name: "Yogacharya Rahul",
+    image: "/images/astrologer-8.svg",
+    specialty: "Vedic Astrology, Spiritual",
+    languages: "Hindi, English",
+    experience: 18,
+    rating: 4.87,
+    reviews: "1,920",
+    rate: 45,
+    online: true,
+    similarRating: 4.87,
+    similarReviews: "1,920",
+    similarSpecialty: "Vedic & Spiritual",
+    similarExperience: 18,
+  },
+  {
+    slug: "tarot-ananya",
     name: "Tarot Ananya",
     image: "/images/astrologer-6.svg",
-    specialty: "Tarot • Life Coach",
+    specialty: "Tarot,  Life Coach",
     languages: "English, Hindi",
     experience: 8,
     rating: 4.8,
@@ -161,9 +195,10 @@ export const directoryAstrologers = [
     online: true,
   },
   {
+    slug: "pandit-k-mishra",
     name: "Pandit K. Mishra",
     image: "/images/astrologer-7.svg",
-    specialty: "Kundli Match • Vastu",
+    specialty: "Kundli Matching,  Vastu",
     languages: "Hindi, Gujarati",
     experience: 15,
     rating: 4.9,
@@ -172,9 +207,10 @@ export const directoryAstrologers = [
     online: true,
   },
   {
+    slug: "vedic-divya",
     name: "Vedic Divya",
     image: "/images/astrologer-8.svg",
-    specialty: "Vedic • Gemology",
+    specialty: "Vedic Astrology, Gemology",
     languages: "English, Marathi",
     experience: 11,
     rating: 4.6,
@@ -183,6 +219,68 @@ export const directoryAstrologers = [
     online: false,
   },
 ];
+
+export const directoryProfileDetails = {
+  "pt-radheshyam": {
+    name: "Pt. Radheshyam Shastri",
+    title: "Senior Vedic Astrologer & Parashara Kundli Specialist",
+    consultations: "14,850+",
+    bio: "Pt. Radheshyam Shastri belongs to an illustrious lineage of traditional Vedic scholars from Varanasi. With over 16 years of intensive practice in Parashara Jyotish, Jaimini astrology, and sacred remedial rituals, he has guided thousands of seekers through critical life transitions spanning career advancement, international relocations, complex matrimonial compatibility, and spiritual alignment.",
+    approach:
+      "His astrological approach synthesizes ancient predictive calculations with pragmatic modern insights. Rather than instilling fear of malefic planetary transits, Pt. Radheshyam prescribes precise Vedic remedies, gemstone alignments, and sacred sankalpa pujas to harmonize karmic trajectories.",
+    credentials: [
+      "Varanasi Vedic Gurukul Tradition (3rd Generation Astrologer)",
+      "Jyotish Acharya & Gold Medalist in Vedic Mathematics",
+    ],
+    topics: [
+      {
+        title: "Marriage & Matchmaking",
+        description:
+          "Comprehensive 36 Gun Milan, Mangal Dosha analysis, Nadi matching, and timing of marriage.",
+      },
+      {
+        title: "Career & Job Transitions",
+        description:
+          "Auspicious timing for job switches, promotion periods, foreign settlements, and business ventures.",
+      },
+      {
+        title: "Financial & Wealth Forecast",
+        description:
+          "Dhan Yoga identification, debt clearance timelines, and prudent investment muhurats.",
+      },
+      {
+        title: "Vedic Remedies & Gemology",
+        description:
+          "Prescription of certified lab-tested gemstones, powerful mantras, and corrective puja rituals.",
+      },
+    ],
+    reviews: [
+      {
+        name: "Prateek Kapoor",
+        place: "Bengaluru",
+        age: "2 days ago",
+        tags: ["Chat Consultation", "Career Guidance"],
+        quote:
+          "Pandit Radheshyam's career prediction regarding my job switch in October was spot on to the exact month. His recommended copper yantra and mantra brought clarity during a very anxious period.",
+      },
+      {
+        name: "Sneha Mukherjee",
+        place: "Kolkata",
+        age: "1 week ago",
+        avatarColor: "#C98308",
+        tags: ["Audio Call", "Kundli Matching"],
+        quote:
+          "I was skeptical about online Kundli matching, but Acharya Meenakshi and Pt. Radheshyam explained the Guna Milan breakdown and Mangal Dosha nuances with immense empathy. Saved us so much emotional distress.",
+      },
+    ],
+    similar: [
+      "acharya-meenakshi",
+      "dr-arvind-shastri",
+      "shrimati-sunita-devi",
+      "yogacharya-rahul",
+    ],
+  },
+};
 
 export const directorySpecialties = [
   "All Astrologers",

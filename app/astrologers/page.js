@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import {
@@ -33,41 +34,46 @@ function ConsultantCard({ person }) {
   const [notice, setNotice] = useState("");
   return (
     <article className="directory-card">
-      <div className="directory-card-top">
-        <span
-          className={`availability ${person.online ? "is-online" : "is-offline"}`}
-        >
-          <i />
-          {person.online ? "Online" : "Offline"}
-        </span>
-        <span className="experience-pill">{person.experience}+ Yrs</span>
-      </div>
-      <div className="consultant-info">
-        <Image
-          src={person.image}
-          className="consultant-avatar"
-          width={60}
-          height={60}
-          alt="astrologer-image"
-        />
-        <div className="consultant-copy">
-          <h2>
-            {person.name} <BadgeCheck size={20} fill="currentColor" />
-          </h2>
-          <p>{person.specialty}</p>
-          <small>{person.languages}</small>
+      <Link
+        href={`/astrologers/${person.slug}`}
+        className="consultant-profile-link"
+      >
+        <div className="directory-card-top">
+          <span
+            className={`availability ${person.online ? "is-online" : "is-offline"}`}
+          >
+            <i />
+            {person.online ? "Online" : "Offline"}
+          </span>
+          <span className="experience-pill">{person.experience}+ Yrs</span>
         </div>
-      </div>
-      <div className="consultant-rating">
-        <span>
-          <Star size={17} fill="currentColor" />{" "}
-          <b>{person.rating.toFixed(1)}</b>{" "}
-          <small className="mt-1">({person.reviews})</small>
-        </span>
-        <strong>
-          ₹{person.rate} <small>/ min</small>
-        </strong>
-      </div>
+        <div className="consultant-info">
+          <Image
+            src={person.image}
+            className="consultant-avatar"
+            width={60}
+            height={60}
+            alt="astrologer-image"
+          />
+          <div className="consultant-copy">
+            <h2>
+              {person.name} <BadgeCheck size={20} fill="currentColor" />
+            </h2>
+            <p>{person.specialty}</p>
+            <small>{person.languages}</small>
+          </div>
+        </div>
+        <div className="consultant-rating">
+          <span>
+            <Star size={17} fill="currentColor" />{" "}
+            <b>{person.rating.toFixed(1)}</b>{" "}
+            <small className="mt-1">({person.reviews})</small>
+          </span>
+          <strong>
+            ₹{person.rate} <small>/ min</small>
+          </strong>
+        </div>
+      </Link>
       {person.online ? (
         <div className="consultant-actions">
           <button
@@ -189,6 +195,11 @@ export default function AstrologersPage() {
 
   return (
     <main className="directory-page">
+      <nav className="directory-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/">Home</Link>
+        <span>/</span>
+        <strong>Talk to Astrologer</strong>
+      </nav>
       <header className="directory-heading">
         <div className="directory-title-line">
           <h1 className="font-bold">Talk to Astrologers</h1>

@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`nav-link ${pathname === link.href ? "is-active" : ""}`}
+              className={`nav-link ${pathname === link.href || (link.href === "/astrologers" && pathname.startsWith("/astrologers/")) ? "is-active" : ""}`}
             >
               {link.name}
             </Link>

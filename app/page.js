@@ -30,15 +30,9 @@ import ImageCard from "../components/ImageCard";
 import TrustCard from "../components/TrustCard";
 import TestimonialCard from "../components/TestimonialCard";
 
-import {
-  services,
-  astrologers,
-  signs,
-  pujas,
-  products,
-  trustItems,
-  testimonials,
-} from "../data/astrologyData";
+import { services, astrologers, signs, trustItems, testimonials } from "@/data/homepage";
+import { pujas } from "@/data/puja";
+import { products } from "@/data/store";
 
 function HeroIllustration() {
   return (

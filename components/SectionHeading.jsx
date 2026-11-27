@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 export default function SectionHeading({
   eyebrow,
@@ -40,6 +40,13 @@ export default function SectionHeading({
             </span>
           )}
           {action.label}
+          {!action.stars && (
+            <ArrowRight
+              className="section-action-arrow"
+              size={15}
+              aria-hidden="true"
+            />
+          )}
         </Link>
       )}
     </div>

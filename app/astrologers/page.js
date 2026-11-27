@@ -26,7 +26,7 @@ import {
   directoryAstrologers as consultants,
   directorySpecialties as specialties,
   directoryFilterOptions as filterOptions,
-} from "../../data/astrologyData";
+} from "@/data/astrologers/directory";
 
 import "./astrologers.css";
 

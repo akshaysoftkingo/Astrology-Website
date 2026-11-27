@@ -144,7 +144,6 @@ export default function AstrologerProfile({
               <h1 id="profile-name">{displayName}</h1>
               <span className="verified-master">
                 <BadgeCheck size={16} />
-                Verified Master
               </span>
             </div>
             <p className="profile-title">{title}</p>

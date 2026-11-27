@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
   directoryAstrologers,
   directoryProfileDetails,
-} from "../../../data/astrologyData";
+} from "@/data/astrologers/directory";
+import { directoryProfileDetails as profileDetails } from "@/data/astrologers/profiles";
 import AstrologerProfile from "./profile";
 
 export function generateStaticParams() {
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function AstrologerProfilePage({ params }) {
+async function AstrologerProfileContent({ params }) {
   const { slug } = await params;
   const person = directoryAstrologers.find(
     (astrologer) => astrologer.slug === slug,
@@ -36,8 +38,16 @@ export default async function AstrologerProfilePage({ params }) {
   return (
     <AstrologerProfile
       astrologer={person}
-      details={directoryProfileDetails[slug] || null}
+      details={profileDetails[slug] || null}
       astrologers={directoryAstrologers}
     />
+  );
+}
+
+export default function AstrologerProfilePage({ params }) {
+  return (
+    <Suspense fallback={null}>
+      <AstrologerProfileContent params={params} />
+    </Suspense>
   );
 }

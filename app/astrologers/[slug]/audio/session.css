@@ -1,0 +1,775 @@
+.audio-session-page {
+  min-height: calc(100vh - 70px);
+  padding: 0 248px 64px;
+  background: #fff;
+  color: #201e22;
+  border-bottom: 1px solid #d5c4ad4d;
+}
+
+.audio-session-header {
+  position: relative;
+  min-height: 78px;
+  margin: 0 -48px 40px;
+  padding: 0 48px;
+  border-bottom: 1px solid #d5c4ad4d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.audio-session-header::after {
+  position: absolute;
+  right: 50%;
+  bottom: -1px;
+  width: 100vw;
+  border-bottom: 1px solid #d5c4ad4d;
+  content: "";
+  transform: translateX(50%);
+}
+
+.audio-back-link,
+.audio-live-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #1b1b1e;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.audio-live-timer {
+  padding: 9px 17px;
+  border: 1px solid #d5c4ad66;
+  border-radius: 999px;
+  font-weight: 400;
+}
+
+.audio-live-timer svg,
+.audio-live-timer strong {
+  color: #7d5800;
+}
+
+.audio-live-timer strong {
+  font-weight: 750;
+}
+
+.audio-session-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(360px, 1fr);
+  gap: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.audio-main-column,
+.audio-side-column {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.audio-call-panel {
+  min-height: 650px;
+  padding: 34px 38px 28px;
+  border-radius: 24px;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #1b1b1e 0,
+    #242428 42%,
+    #1b1b1e 100%
+  );
+  color: white;
+  box-shadow: 0 18px 32px #1e1a1d1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio-panel-topline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audio-secure-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d1d5db;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+}
+
+.audio-secure-label i {
+  width: 10px;
+  height: 10px;
+  background: #26ce98;
+  border-radius: 50%;
+  box-shadow: 0 0 13px #26ce9870;
+}
+
+.audio-rate-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #ffffff19;
+  color: #fcd34d;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.audio-caller {
+  width: 100%;
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.audio-caller-avatar {
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  border: 5px solid #b98a23;
+  object-fit: cover;
+  box-shadow: 0 0 38px #e1ac3150;
+}
+
+.audio-caller h1 {
+  margin: 17px 0 3px;
+  font-size: clamp(25px, 2.3vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  font-weight: 700;
+}
+
+.audio-caller p {
+  max-width: 540px;
+  margin: 0;
+  color: #d1d5db;
+  font-size: 16px;
+}
+
+.audio-wave-box {
+  width: min(74%, 650px);
+  min-height: 136px;
+  margin-top: 33px;
+  padding: 20px;
+  border: 1px solid #ffffff1a;
+  border-radius: 90px;
+  background: #ffffff08;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+
+.audio-wave {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 54px;
+}
+
+.audio-wave i {
+  display: block;
+  width: 8px;
+  height: var(--wave-height);
+  border-radius: 99px;
+  background: #ffc21e;
+  animation: audio-wave-pulse 950ms ease-in-out infinite alternate;
+  animation-delay: var(--wave-delay);
+}
+
+.audio-wave.is-still i {
+  animation-play-state: paused;
+  height: 12px;
+}
+
+.audio-wave-box > span {
+  color: #fcd34d;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+}
+
+@keyframes audio-wave-pulse {
+  from {
+    transform: scaleY(0.55);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.audio-controls button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d0d0d2;
+  font: inherit;
+  cursor: pointer;
+}
+
+.audio-controls button > span {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border: 1px solid #ffffff26;
+  border-radius: 50%;
+  background: #ffffff17;
+  color: #fff;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.audio-controls button:hover > span {
+  transform: translateY(-2px);
+  background: #ffffff27;
+}
+
+.audio-controls button.is-active > span {
+  border-color: #ffffff48;
+}
+
+.audio-controls .audio-end-control {
+  color: #ff6666;
+}
+
+.audio-controls .audio-end-control > span {
+  width: 72px;
+  height: 72px;
+  border: 0;
+  background: #e5232a;
+}
+
+.audio-controls button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.audio-call-panel.is-ended .audio-caller-avatar {
+  filter: grayscale(0.7);
+}
+
+.audio-tip-card,
+.audio-security-card {
+  padding: 26px 34px;
+  border: 1px solid #f0eaf1;
+  border-radius: 23px;
+  background: #f7f3f8;
+}
+
+.audio-tip-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 450;
+}
+
+.audio-tip-card h2 svg {
+  color: #906500;
+}
+
+.audio-tip-card p {
+  margin: 0;
+  color: #504534;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.audio-info-card {
+  padding: 28px 30px;
+  border: 1px solid #eee8e0;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 2px 5px #251c0c0b;
+}
+
+.audio-astrologer-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 22px;
+}
+
+.audio-astrologer-heading > img {
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  border: 3px solid #e7d7ba;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.audio-astrologer-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.audio-astrologer-heading h2 svg {
+  color: #f59e0b;
+}
+
+.audio-astrologer-heading p {
+  margin: 6px 0 8px;
+  color: #5a5145;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.audio-astrologer-heading p span {
+  color: #a08f79;
+}
+
+.audio-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #817563;
+  font-size: 14px;
+}
+
+.audio-rating b {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.audio-astrologer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #f0edeb;
+  color: #5b5247;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.audio-astrologer-meta strong {
+  color: #201e22;
+}
+
+.audio-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #f0edeb;
+}
+
+.audio-card-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.audio-card-heading h2 svg {
+  color: #8c6300;
+}
+
+.audio-billing-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #78350f;
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.audio-billing-badge.is-paused {
+  background: #f0edef;
+  color: #635b61;
+}
+
+.audio-accounting-list {
+  display: grid;
+  gap: 16px;
+  margin: 19px 0 23px;
+}
+
+.audio-accounting-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audio-accounting-list dt {
+  color: #504534;
+}
+
+.audio-accounting-list dd {
+  margin: 0;
+  font-weight: 650;
+  text-align: right;
+}
+.audio-accounting-list .audio-rate-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.audio-accounting-list .audio-money-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.audio-accounting-list .audio-gold-value {
+  color: #8a6100;
+}
+
+.audio-accounting-list .audio-green-value {
+  color: #00825c;
+}
+
+.audio-runway-card {
+  padding: 18px;
+  border: 1px solid #f0eaf1;
+  border-radius: 18px;
+  background: #f7f3f8;
+}
+
+.audio-runway-head,
+.audio-runway-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.audio-runway-head {
+  font-size: 14px;
+}
+
+.audio-runway-head b {
+  color: #af5100;
+  text-align: right;
+}
+
+.audio-runway-track {
+  height: 10px;
+  margin: 11px 0 14px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e9e5e9;
+}
+
+.audio-runway-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffc21e, #8d6200);
+  transition: width 0.4s;
+}
+
+.audio-runway-foot {
+  color: #625749;
+  font-size: 13px;
+}
+
+.audio-runway-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #8c6200;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.audio-security-card h2 {
+  margin: 0 0 17px;
+  color: #827561;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.audio-security-card p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 11px 0 0;
+  color: #504534;
+  font-size: 14px;
+}
+
+.audio-security-card p svg {
+  flex: 0 0 auto;
+  color: #00a875;
+}
+
+.audio-return-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  border-radius: 12px;
+  background: #8e6500;
+  color: white;
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.audio-session-loading {
+  min-height: 70vh;
+}
+
+@media (max-width: 1050px) {
+  .audio-session-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 22px;
+  }
+
+  .audio-session-page {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .audio-session-header {
+    margin-right: -28px;
+    margin-left: -28px;
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .audio-call-panel {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .audio-wave-box {
+    width: 90%;
+  }
+
+  .audio-info-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .audio-session-page {
+    padding: 0 16px 32px;
+  }
+
+  .audio-session-header {
+    min-height: 66px;
+    margin: 0 -16px 22px;
+    padding: 0 16px;
+  }
+
+  .audio-back-link {
+    gap: 5px;
+    font-size: 13px;
+  }
+
+  .audio-back-link svg {
+    width: 18px;
+  }
+
+  .audio-live-timer {
+    gap: 6px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .audio-live-timer svg {
+    width: 17px;
+  }
+
+  .audio-session-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .audio-main-column,
+  .audio-side-column {
+    gap: 18px;
+  }
+
+  .audio-call-panel {
+    min-height: auto;
+    padding: 22px 15px 25px;
+    border-radius: 18px;
+  }
+
+  .audio-panel-topline {
+    align-items: flex-start;
+  }
+
+  .audio-secure-label {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+
+  .audio-secure-label i {
+    width: 8px;
+    height: 8px;
+  }
+
+  .audio-rate-pill {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .audio-caller {
+    margin-top: 35px;
+  }
+
+  .audio-caller-avatar {
+    width: 112px;
+    height: 112px;
+  }
+
+  .audio-caller h1 {
+    font-size: 25px;
+  }
+
+  .audio-caller p {
+    font-size: 13px;
+  }
+
+  .audio-wave-box {
+    width: 100%;
+    min-height: 112px;
+    margin-top: 25px;
+    padding: 12px;
+  }
+
+  .audio-wave-box > span {
+    font-size: 9px;
+  }
+
+  .audio-controls {
+    gap: 23px;
+    margin-top: 22px;
+  }
+
+  .audio-controls button > span {
+    width: 58px;
+    height: 58px;
+  }
+
+  .audio-controls .audio-end-control > span {
+    width: 62px;
+    height: 62px;
+  }
+
+  .audio-tip-card,
+  .audio-security-card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .audio-tip-card h2 {
+    font-size: 17px;
+  }
+
+  .audio-tip-card p {
+    font-size: 14px;
+  }
+
+  .audio-info-card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .audio-astrologer-heading {
+    gap: 12px;
+  }
+
+  .audio-astrologer-heading > img {
+    flex-basis: 72px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .audio-astrologer-heading h2 {
+    font-size: 17px;
+  }
+
+  .audio-astrologer-heading p {
+    font-size: 12px;
+  }
+
+  .audio-astrologer-meta {
+    flex-direction: column;
+    padding-top: 14px;
+    font-size: 12px;
+  }
+
+  .audio-card-heading h2 {
+    font-size: 17px;
+  }
+
+  .audio-billing-badge {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .audio-accounting-list {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .audio-runway-card {
+    padding: 14px;
+  }
+
+  .audio-runway-head,
+  .audio-runway-foot {
+    font-size: 11px;
+  }
+
+  .audio-security-card h2 {
+    font-size: 14px;
+  }
+
+  .audio-security-card p {
+    font-size: 12px;
+  }
+}

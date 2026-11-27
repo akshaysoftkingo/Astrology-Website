@@ -84,15 +84,13 @@ function ConsultantCard({ person }) {
             <MessageSquareText size={17} />
             Chat
           </button>
-          <button
+          <Link
+            href={`/astrologers/${person.slug}/audio`}
             className="call-action"
-            onClick={() =>
-              setNotice(`Call request started with ${person.name}`)
-            }
           >
             <Phone size={17} />
             Call
-          </button>
+          </Link>
         </div>
       ) : (
         <div className="consultant-actions">

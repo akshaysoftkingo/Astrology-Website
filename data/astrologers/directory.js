@@ -4,7 +4,7 @@ export const directoryAstrologers = [
     name: "Pt. Radheshyam",
     image: "/images/astrologer-1.svg",
     specialty: "Vedic Astrology, Kundli Matching , Career & Wealth",
-    languages: "Hindi, English, Sanskrit",
+    languages: "English, Hindi, Sanskrit",
     experience: "16+",
     rating: 4.9,
     reviews: "4,210",

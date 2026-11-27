@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   BadgeCheck,
@@ -90,6 +91,7 @@ export default function AstrologerProfile({
   astrologers,
 }) {
   const [actionMessage, setActionMessage] = useState("");
+  const router = useRouter();
   const displayName = details?.name || astrologer.name;
   const title =
     details?.title || `Verified ${astrologer.specialty} Astrologer & Guide`;
@@ -110,6 +112,10 @@ export default function AstrologerProfile({
     .filter(Boolean);
 
   const beginConsultation = (type, consultant = astrologer) => {
+    if (type === "call") {
+      router.push(`/astrologers/${consultant.slug}/audio`);
+      return;
+    }
     const label = type === "chat" ? "Text chat" : "Audio call";
     setActionMessage(
       `${label} request started for ${consultant.name}. Sign in to continue.`,

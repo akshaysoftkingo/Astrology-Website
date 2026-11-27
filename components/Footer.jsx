@@ -61,7 +61,7 @@ export default function Footer() {
           <Link href={homeAnchor("experts")}>Chat with Astrologer</Link>
           <Link href={homeAnchor("experts")}>Audio Consultation</Link>
           <Link href={homeAnchor("kundli")}>Free Janam Kundli</Link>
-          <Link href={homeAnchor("horoscope")}>Daily Horoscope</Link>
+          <Link href="/horoscope">Daily Horoscope</Link>
           <Link href={homeAnchor("pujas")}>Book Puja</Link>
           <Link href={homeAnchor("store")}>Store</Link>
         </nav>

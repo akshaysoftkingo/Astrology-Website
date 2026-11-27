@@ -30,7 +30,13 @@ import ImageCard from "../components/ImageCard";
 import TrustCard from "../components/TrustCard";
 import TestimonialCard from "../components/TestimonialCard";
 
-import { services, astrologers, signs, trustItems, testimonials } from "@/data/homepage";
+import {
+  services,
+  astrologers,
+  signs,
+  trustItems,
+  testimonials,
+} from "@/data/homepage";
 import { pujas } from "@/data/puja";
 import { products } from "@/data/store";
 
@@ -232,7 +238,7 @@ export default function AstrologyHomePage() {
               </Link>
               <Link
                 className="button button--white button--large"
-                href="#horoscope"
+                href="/horoscope"
               >
                 <Compass size={20} className="text-[#7D5800]" />
                 Explore Your Horoscope
@@ -347,7 +353,7 @@ export default function AstrologyHomePage() {
           )}
           <Link
             className="button button--gold button--large horoscope-cta"
-            href="#horoscope"
+            href="/horoscope"
           >
             Read Your Complete Horoscope
             <MoveRight size={18} />

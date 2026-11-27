@@ -14,7 +14,7 @@ import {
   ZodiacVirgo,
 } from "lucide-react";
 
-const zodiacIcons = {
+export const zodiacIcons = {
   Aries: ZodiacAries,
   Taurus: ZodiacTaurus,
   Gemini: ZodiacGemini,

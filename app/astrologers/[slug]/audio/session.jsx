@@ -19,6 +19,7 @@ import {
   Wallet,
   Volume2,
   Phone,
+  PhoneOff,
   VolumeOff,
 } from "lucide-react";
 
@@ -154,7 +155,7 @@ export default function AudioSession({ astrologer, details }) {
                 disabled={ended}
               >
                 <span>
-                  <Phone size={26} />
+                  {ended ? <PhoneOff size={26} /> : <Phone size={26} />}
                 </span>
                 {ended ? "Ended" : "End Call"}
               </button>

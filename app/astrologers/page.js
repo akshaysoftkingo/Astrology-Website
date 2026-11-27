@@ -76,14 +76,10 @@ function ConsultantCard({ person }) {
       </Link>
       {person.online ? (
         <div className="consultant-actions">
-          <button
-            onClick={() =>
-              setNotice(`Chat request started with ${person.name}`)
-            }
-          >
+          <Link href={`/astrologers/${person.slug}/chat`}>
             <MessageSquareText size={17} />
             Chat
-          </button>
+          </Link>
           <Link
             href={`/astrologers/${person.slug}/audio`}
             className="call-action"
